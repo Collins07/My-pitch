@@ -20,12 +20,14 @@ def about():
 
 @app.route('/register')
 def register():
-    return render_template('register.html')
+    form = RegistrationForm()
+    return render_template('register.html', form=form)
 
 
 @app.route('/login')
-def register():
-    return render_template('login.html')    
+def login():
+    form = LoginForm()
+    return render_template('login.html', form=form)    
 
 
 if __name__ == '__main__':
