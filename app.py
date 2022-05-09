@@ -12,9 +12,15 @@ app.config['SECRET-KEY'] = 'f5fc6c0c1baafa20f33f58b6c31acdfe'
 def home():
     return render_template('home.html')
 
+
 @app.route('/about')
 def about():
     return render_template('about.html')
+
+
+@app.route('/register')
+def register():
+    return render_template('register.html')
 
 
 if __name__ == '__main__':
