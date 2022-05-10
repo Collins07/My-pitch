@@ -5,12 +5,28 @@
 #row1{
     height: 50px;
 }
+.link{
+    color: white;
+    text-decoration: none;
+}
+.link:hover{
+    font-size: 17px;
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-decoration-skip: 2px;
+    background-color: whitesmoke;
+    color: black;
+    border-radius: 7px 7px 0px 0px;
+}
+
 li{
     margin-left: 15%;
     margin-top: 1.6%;
     font-size: 20px;
     width: 100px;
     text-align: center;
+    color: white;
 }
 li:hover{
     font-size: 17px;

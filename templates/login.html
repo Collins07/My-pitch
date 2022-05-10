@@ -14,7 +14,7 @@
             <form method="POST" action="">
                 {{ form.hidden_tag() }}
                 <fieldset>
-                    <legend class="border-bottom mb-4">Register on My Pitch</legend>
+                    <legend class="border-bottom mb-4">Login to get Started</legend>
                     <div class="form-group">
                         {{ form.email.label(class = "form-control-label") }}
                         {{ form.email(class = "form-control form-control-lg") }}
@@ -23,15 +23,17 @@
                         {{ form.password.label(class = "form-control-label") }}
                         {{ form.password(class = "form-control form-control-lg") }}
                     </div>
-                    <div class="form-check">
-                        {{form.remember(class="form-check-input")}}
-                        {{form.remember.label(class="form-check-label")}}
-                    </div>
                 </fieldset>
                 <div id="btn1" class="form-group">
                     {{ form.submit(class = "btn btn-outline-info")}}
                 </div>
             </form>
         </div>
+        <div id="div2" class="border-top">
+            <small class="text">
+                Post your Pitch <a href="{{ url_for('login') }}">Here</a>
+            </small>
+        </div>
+    </div>    
 </body>
 </html>

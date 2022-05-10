@@ -17,4 +17,5 @@ class LoginForm(FlaskForm):
 
     password = PasswordField('Password', validators=[DataRequired()])
 
+
     submit = SubmitField('Sign-In')
