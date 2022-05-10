@@ -4,7 +4,7 @@ class Config:
     '''
     General configuration parent class
     '''
-    SECRET_KEY = os.environ.get('6592b1e01d031f6fee363c2d6f8e14bd')
+    SECRET_KEY = os.environ.get('SECRET_KEY')
 
 
 
