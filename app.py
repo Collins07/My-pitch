@@ -1,10 +1,10 @@
 from flask import Flask, render_template, url_for
 from form import RegistrationForm, LoginForm
-from flask_script import Manager, Server
+
+
 
 app = Flask(__name__)
-manager = Manager(app)
-manager.add_command('server',Server)
+app.config.from_pyfile('config.py')
 
 #app.config['SECRET-KEY'] = '6592b1e01d031f6fee363c2d6f8e14bd'
 

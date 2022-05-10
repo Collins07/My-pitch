@@ -1,10 +1,9 @@
-import os
+SECRET_KEY = '\x0b\xeb"8\x85\xe9\xb1\x88M\xfcGOwEZS'
 
 class Config:
     '''
     General configuration parent class
     '''
-    SECRET_KEY = os.environ.get('SECRET_KEY')
 
 
 
