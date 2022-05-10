@@ -1,3 +1,4 @@
+from crypt import methods
 from flask import Flask, render_template, url_for
 from form import RegistrationForm, LoginForm
 
@@ -22,7 +23,7 @@ def about():
     return render_template('about.html')
 
 
-@app.route('/register')
+@app.route('/register', methods=['GET', 'POST'])
 def register():
     form = RegistrationForm()
     return render_template('register.html', form=form)
