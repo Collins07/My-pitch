@@ -37,7 +37,12 @@ def register():
 @app.route('/login')
 def login():
     form = LoginForm()
-    return render_template('login.html', form=form)    
+    return render_template('login.html', form=form) 
+
+
+@app.route('/pitch')
+def pitch():
+    return render_template('pitch.html')
 
 
 if __name__ == '__main__':
