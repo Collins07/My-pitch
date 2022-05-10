@@ -1,5 +1,5 @@
 from crypt import methods
-from flask import Flask, render_template, url_for, flash
+from flask import Flask, render_template, url_for, flash, redirect
 from form import RegistrationForm, LoginForm
 
 
@@ -26,7 +26,8 @@ def about():
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if form.validate_on_submit():
-
+        flash(f'Account created for { form.username.data }', 'success')
+        return redirect(url_for('home'))
     form = RegistrationForm()
     return render_template('register.html', form=form)
 

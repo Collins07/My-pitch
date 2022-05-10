@@ -1,3 +1,3 @@
-export SECRET_KEY=6592b1e01d031f6fee363c2d6f8e14bd
+export SECRET_KEY=\x0b\xeb"8\x85\xe9\xb1\x88M\xfcGOwEZS
 
 python3 app.py server
