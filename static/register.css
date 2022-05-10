@@ -6,7 +6,11 @@
     width: 60%;
     margin-left: 20%;
     background-color: #af7e8f;
-    margin-top: 5%;
+}
+.message{
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 2%;
 }
 a{
     font-size: 20px;

@@ -25,10 +25,11 @@ def about():
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
+    
+    form = RegistrationForm()
     if form.validate_on_submit():
         flash(f'Account created for { form.username.data }', 'success')
-        return redirect(url_for('home'))
-    form = RegistrationForm()
+        return redirect(url_for('register'))
     return render_template('register.html', form=form)
 
 
