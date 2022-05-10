@@ -1,5 +1,6 @@
 from flask import Flask, render_template, url_for
 from form import RegistrationForm, LoginForm
+from config import Config
 
 app = Flask(__name__)
 
