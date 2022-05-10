@@ -1,13 +1,9 @@
-from flask import Flask, render_template
-from flask_wtf.csrf import CSRFProtect
+from flask import Flask, render_template, url_for
 from form import RegistrationForm, LoginForm
 
 app = Flask(__name__)
 
-csrf = CSRFProtect(app)
-app.config['SECRET-KEY'] = 'f5fc6c0c1baafa20f33f58b6c31acdfe'
-app.config['WTF_CSRF_SECRET_KEY'] = 'f5fc6c0c1baafa20f33f58b6c31acdfe'
-csrf.init_app(app)
+app.config['SECRET-KEY'] = '6592b1e01d031f6fee363c2d6f8e14bd'
 
 
 
