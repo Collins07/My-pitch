@@ -37,6 +37,13 @@ def register():
 @app.route('/login')
 def login():
     form = LoginForm()
+    if form.validate_on_submit():
+        if form.email.data == form.email.data and form.password.data == form.password.data:
+            flash("Successful Login !", 'success')
+            return redirect(url_for('pitch'))
+
+        else:
+            flash('Login Unsuccessful, Please try again later!', 'danger')
     return render_template('login.html', form=form) 
 
 
