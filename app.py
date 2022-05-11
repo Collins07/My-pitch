@@ -34,11 +34,11 @@ def register():
 
 
 
-@app.route('/login')
+@app.route('/login',methods=['GET', 'POST'])
 def login():
     form = LoginForm()
     if form.validate_on_submit():
-        if form.email.data == form.email.data and form.password.data == form.password.data:
+        if form.email.data == 'collinsabaya07@gmail.com' and form.password.data == 'Cn179030':
             flash("Successful Login !", 'success')
             return redirect(url_for('pitch'))
 

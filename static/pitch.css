@@ -1,0 +1,50 @@
+#addpitch{
+    margin-top: 5%;
+    width: 70%;
+    margin-left: 8%;
+}
+textarea{
+    height: 150px;
+}
+.btn{
+    margin-top: 2%;
+    margin-left: 80%;
+}
+.archive{
+    border: 1px solid blue;
+    margin-top: 2%;
+    background-color: rgb(227, 253, 227);
+}
+#tablinks{
+    height: 50px;
+    background-color: rgb(141, 71, 71);
+    color: white;
+}
+li{
+    margin-top: 1%;
+
+}
+#list{
+    color: white;
+
+}
+#list1{
+    margin-left: 5%;
+}
+#list1:hover{
+    font-weight: bold;
+}
+#first{
+    border: 2px solid red;
+}
+#like{
+    font-size: 20px;
+    color: green;
+}
+#dislike{
+    font-size: 20px;
+    color: red;
+}
+.votes{
+    margin-left: 3%;
+}
