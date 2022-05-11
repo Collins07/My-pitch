@@ -10,11 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <div id="addpitch" class="form-group">
-        <textarea class="form-control" placeholder="Post a Pitch ..."></textarea>
-        <button class="btn btn-primary btn-block btn-sm ">Post Pitch</button>
-    </div>
-    
+
     <div class="container ">
         <div class="row ">
             <div id="wrapper" class="home">
@@ -25,6 +21,7 @@
                         <li id="list1"><a onclick="openSection(event, 'business')" class="tablinks" id="list" href="#business" data-toggle="tab">Business</a></li>
                         <li id="list1"><a onclick="openSection(event, 'websites')" class="tablinks"  id="list" href="#websites" data-toggle="tab">Websites</a></li>
                         <li id="list1"><a onclick="openSection(event, 'product')" class="tablinks" id="list" href="#product" data-toggle="tab">Product</a></li>
+                        <a id="link2" href="{{ url_for('home') }}">Home</a>
                     </ul>
     
                     
@@ -49,10 +46,12 @@
                                         </i>
                                     </p>
                                     <small class="votes">
-                                        <i id="like" class="fa fa-thumbs-up"></i>&nbsp;&nbsp; 20
+                                        <i id="like"  class="fa fa-thumbs-up"><p id="input1">20</p></i>
+                                        &nbsp;&nbsp;
                                         &nbsp;&nbsp;&nbsp;&nbsp;
-                                        <i id="dislike" class="fa fa-thumbs-down"></i>&nbsp;&nbsp; 7
+                                        <i id="dislike" class="fa fa-thumbs-down">7</i>
                                     </small>
+                                    <button class="btn btn-primary btn-block btn-sm ">Comment</button>
                                 </li>
     
                                 <li>
@@ -70,10 +69,11 @@
                                          </i>
                                     </p>
                                     <small class="votes">
-                                        <i  id="like" class="fa fa-thumbs-up"></i>&nbsp;&nbsp; 10
+                                        <i  id="like" class="fa fa-thumbs-up">10</i>&nbsp;&nbsp;
                                         &nbsp;&nbsp;&nbsp;&nbsp;
-                                        <i id="dislike" class="fa fa-thumbs-down"></i>&nbsp;&nbsp; 0
+                                        <i id="dislike" class="fa fa-thumbs-down">0</i>&nbsp;&nbsp; 
                                     </small>
+                                    <button class="btn btn-primary btn-block btn-sm ">Comment</button>
                                 </li>
 
                             </ul>
@@ -99,10 +99,11 @@
                                         </i>
                                     </p>
                                     <small class="votes">
-                                        <i id="like" class="fa fa-thumbs-up"></i>&nbsp;&nbsp; 20
+                                        <i id="like" class="fa fa-thumbs-up">20</i>&nbsp;&nbsp;
                                         &nbsp;&nbsp;&nbsp;&nbsp;
-                                        <i id="dislike" class="fa fa-thumbs-down"></i>&nbsp;&nbsp; 7
+                                        <i id="dislike" class="fa fa-thumbs-down">7</i>&nbsp;&nbsp; 
                                     </small>
+                                    <button class="btn btn-primary btn-block btn-sm ">Comment</button>
                                 </li>
                             </ul>
                         </div>
@@ -122,10 +123,11 @@
                                         </i>
                                     </p>
                                     <small class="votes">
-                                        <i id="like" class="fa fa-thumbs-up"></i>&nbsp;&nbsp; 38
+                                        <i id="like" class="fa fa-thumbs-up">38</i>&nbsp;&nbsp;
                                         &nbsp;&nbsp;&nbsp;&nbsp;
-                                        <i id="dislike" class="fa fa-thumbs-down"></i>&nbsp;&nbsp; 7
+                                        <i id="dislike" class="fa fa-thumbs-down">7</i>&nbsp;&nbsp; 
                                     </small>
+                                    <button class="btn btn-primary btn-block btn-sm ">Comment</button>
                                 </li>
     
                                 <li>
@@ -142,10 +144,11 @@
                                          </i>
                                     </p>
                                     <small class="votes">
-                                        <i  id="like" class="fa fa-thumbs-up"></i>&nbsp;&nbsp; 10
+                                        <i  id="like" class="fa fa-thumbs-up">13</i>&nbsp;&nbsp; 
                                         &nbsp;&nbsp;&nbsp;&nbsp;
-                                        <i id="dislike" class="fa fa-thumbs-down"></i>&nbsp;&nbsp; 0
+                                        <i id="dislike" class="fa fa-thumbs-down">2</i>&nbsp;&nbsp;
                                     </small>
+                                    <button class="btn btn-primary btn-block btn-sm ">Comment</button>
                                 </li>
                                 <li>
                                     <a href="">
@@ -163,10 +166,11 @@
                                          </i>
                                     </p>
                                     <small class="votes">
-                                        <i  id="like" class="fa fa-thumbs-up"></i>&nbsp;&nbsp; 10
+                                        <i  id="like" class="fa fa-thumbs-up">31</i>&nbsp;&nbsp;
                                         &nbsp;&nbsp;&nbsp;&nbsp;
-                                        <i id="dislike" class="fa fa-thumbs-down"></i>&nbsp;&nbsp; 0
+                                        <i id="dislike" class="fa fa-thumbs-down">4</i>&nbsp;&nbsp;
                                     </small>
+                                    <button class="btn btn-primary btn-block btn-sm ">Comment</button>
                                 </li>
 
                             </ul>
@@ -210,8 +214,15 @@
           evt.currentTarget.className += " active";
         }
         
-        // Get the element with id="defaultOpen" and click on it
-        document.getElementByClass("active").click();
+        
+
+     
+           let press = document.getElementById('like');
+           let input1 = document.getElementById('input1');
+
+           like.addEventListener('click', ()=>{
+               input1.value = parseInt(input1.value) + 1;
+           })
     </script>
 </body>
 </html>

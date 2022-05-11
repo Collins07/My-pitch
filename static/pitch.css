@@ -3,6 +3,12 @@
     width: 70%;
     margin-left: 8%;
 }
+#link2{
+    color: rgb(3, 158, 185);
+    margin-left: 40%;
+    margin-top: 1%;
+    font-weight: bold;
+}
 textarea{
     height: 150px;
 }
