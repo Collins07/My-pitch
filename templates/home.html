@@ -24,17 +24,20 @@
           </div>
         </div>
     </div> 
-    <div class="message">
-      {% with messages = get_flashed_messages(with_categories=true) %}
-         {% if messages %}
-            {% for category, message in messages %}
-            <div class="alert alert-{{ category }}">
-                {{ message }}
-            </div>
-            {% endfor %}
-         {% endif %}
-      {% endwith %}
+    <div id="description" class="container-fluid">
+      <div id="row2" class="row">
+        <div class="col-12">
+          <p class="para1">
+            <i>
+              Great elevator pitches are similar to memorable stories. 
+              They intertwine visuals and narrative to keep the audience engaged. 
+              And it needs to be completed in the duration of an elevator ride.
+            </i>
+        </p>
+        </div>
 
-  </div>
+      </div>
+    </div>
+  
 </body>
 </html>

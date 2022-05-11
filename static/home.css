@@ -1,5 +1,5 @@
 #main-nav{
-    background-color: #7c4055;
+    background-color: #a35e76;
     color: white;
 }
 #row1{
@@ -37,5 +37,21 @@ li:hover{
     background-color: whitesmoke;
     color: black;
     border-radius: 7px 7px 0px 0px;
+    
+}
+#row2{
+    border: 1px solid green;
+    height: 550px;
+    background-image: url("../static/pitch.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.8;
+}
+.para1{
+    font-size: 40px;
+    text-align: center;
+    margin-top: 150px;
+    color: white;
+    font-weight: bold;
     
 }
