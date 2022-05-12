@@ -4,6 +4,7 @@ from form import RegistrationForm, LoginForm
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 from flask_bcrypt import Bcrypt,bcrypt
+from flask_login import LoginManager, UserMixin, login_user
 
 
 
@@ -13,9 +14,14 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
+login_manager = LoginManager(app)
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
 
 
-class User (db.Model):
+class User (db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(20), unique=True, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
@@ -69,11 +75,16 @@ def register():
 def login():
     form = LoginForm()
     if form.validate_on_submit():
-        if form.email.data == 'collinsabaya07@gmail.com' and form.password.data == 'Cn179030':
-            flash("Successful Login !", 'success')
-            return redirect(url_for('pitch'))
+        # if form.email.data == 'collinsabaya07@gmail.com' and form.password.data == 'Cn179030':
+        #     flash("Successful Login !", 'success')
+        #     return redirect(url_for('pitch'))
 
-        else:
+        # else:
+        user = User.query.filter_by(email=form.email.data).first()
+        if user and bcrypt.check_password_hash(user.password, form.password.data):
+            login_user(user)
+            return redirect(url_for('pitch'))
+        else:    
             flash('Login Unsuccessful, Please try again later!', 'danger')
     return render_template('login.html', form=form) 
 

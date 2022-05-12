@@ -19,8 +19,26 @@
 .btn{
     margin-top: 2%;
 }
+#btn1{
+    margin-top: 3%;
+    border: 1px solid rgb(101, 101, 202)e;
+    width: 55px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: rgb(101, 101, 202);
+    height: 30px;
+}
 .message{
     width: 60%;
     margin-left: 20%;
     margin-top: 1%;
+}
+.login{
+    color: white;
+    text-decoration: none;
+}
+.login:hover{
+    color: white;
 }

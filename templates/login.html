@@ -36,15 +36,10 @@
                         {{ form.password(class = "form-control form-control-lg") }}
                     </div>
                 </fieldset>
-                <div id="btn1" class="form-group">
-                    {{ form.submit(class = "btn btn-outline-info")}}
-                </div>
+                <button id="btn1" class="submit">
+                    <a class="login" href="{{ url_for('pitch') }}">Login</a>
+                </button>
             </form>
-        </div>
-        <div id="div2" class="border-top">
-            <small class="text">
-                Post your Pitch <a href="{{ url_for('pitch') }}">Here</a>
-            </small>
         </div>
     </div>    
 </body>
