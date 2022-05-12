@@ -4,7 +4,7 @@ from form import RegistrationForm, LoginForm
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 from flask_bcrypt import Bcrypt,bcrypt
-from flask_login import LoginManager, UserMixin, login_user
+from flask_login import LoginManager, UserMixin, login_user, current_user, logout_user
 
 
 
@@ -87,6 +87,12 @@ def login():
         else:    
             flash('Login Unsuccessful, Please try again later!', 'danger')
     return render_template('login.html', form=form) 
+
+
+@app.route('/logout')
+def logout():
+    logout_user()
+    return redirect(url_for('login'))
 
 
 @app.route('/pitch')
