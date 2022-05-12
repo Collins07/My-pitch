@@ -3,7 +3,7 @@ from flask import Flask, render_template, url_for, flash, redirect
 from form import RegistrationForm, LoginForm
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
-from flask_bcrypt import Bcrypt
+from flask_bcrypt import Bcrypt,bcrypt
 
 
 
@@ -55,10 +55,12 @@ def register():
     
     form = RegistrationForm()
     if form.validate_on_submit():
-        flash(f'Account created for { form.username.data }', 'success')
         hashed_password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
         user = User(username=form.username.data, email=form.email.data, password=hashed_password)
-        return redirect(url_for('register'))
+        db.session.add(user)
+        db.session.commit()
+        flash('Your account has been created succesfully', 'success')
+        return redirect(url_for('login'))
     return render_template('register.html', form=form)
 
 
