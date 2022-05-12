@@ -3,7 +3,7 @@ from flask import Flask, render_template, url_for, flash, redirect
 from form import RegistrationForm, LoginForm
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
-
+from flask_bcrypt import Bcrypt
 
 
 
@@ -12,6 +12,9 @@ app.config.from_pyfile('config.py')
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 
 db = SQLAlchemy(app)
+bcrypt = Bcrypt(app)
+
+
 class User (db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(20), unique=True, nullable=False)
