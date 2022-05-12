@@ -1,7 +1,8 @@
+import datetime
 import email
 from xml.dom import ValidationErr
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField
+from wtforms import StringField, PasswordField, SubmitField, TextAreaField, DateTimeField
 from wtforms.validators import DataRequired, EqualTo, Length,Email
 
 
@@ -22,3 +23,12 @@ class LoginForm(FlaskForm):
 
 
     submit = SubmitField('Sign-In')
+
+class PostForm(FlaskForm):
+    until = DateTimeField(
+        "Posted on", format="%Y-%m-%dT%H:%M:%S",
+        default=datetime.date.today(), 
+        validators=[DataRequired()])
+    author = StringField('Author', validators=[DataRequired()])
+    content = TextAreaField('Content', validators=[DataRequired()])
+    submit = SubmitField('Post')

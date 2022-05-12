@@ -4,7 +4,7 @@ from form import RegistrationForm, LoginForm
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 from flask_bcrypt import Bcrypt,bcrypt
-from flask_login import LoginManager, UserMixin, login_user, current_user, logout_user
+from flask_login import LoginManager, UserMixin, login_required, login_user, current_user, logout_user
 
 
 
@@ -73,13 +73,9 @@ def register():
 
 @app.route('/login',methods=['GET', 'POST'])
 def login():
+
     form = LoginForm()
     if form.validate_on_submit():
-        # if form.email.data == 'collinsabaya07@gmail.com' and form.password.data == 'Cn179030':
-        #     flash("Successful Login !", 'success')
-        #     return redirect(url_for('pitch'))
-
-        # else:
         user = User.query.filter_by(email=form.email.data).first()
         if user and bcrypt.check_password_hash(user.password, form.password.data):
             login_user(user)
@@ -95,8 +91,9 @@ def logout():
     return redirect(url_for('login'))
 
 
-@app.route('/pitch')
-def pitch():
+@app.route('/post/new')
+@login_required
+def new_post():
     return render_template('pitch.html')
 
 
