@@ -26,10 +26,10 @@ class LoginForm(FlaskForm):
 
 
 class PostForm(FlaskForm):
-    until = DateTimeField(
-        "Posted on", format="%Y-%m-%d ",
-        default=datetime.date.today(), 
-        validators=[DataRequired()])
+    # until = DateTimeField(
+    #     "Posted on", format="%Y-%m-%d ",
+    #     default=datetime.date.today(), 
+    #     validators=[DataRequired()])
     author = StringField('Author', validators=[DataRequired()])
     content = TextAreaField('Content', validators=[DataRequired()])
     submit = SubmitField('Post')

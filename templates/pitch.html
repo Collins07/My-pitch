@@ -48,10 +48,10 @@
                                         </i>
                                     </p>
                                     <small class="votes">
-                                        <i id="like"  class="fa fa-thumbs-up"><p id="input1">20</p></i>
+                                        <i id="like" onclick="count()"  class="fa fa-thumbs-up"><p id="likeCount">20</p></i>
                                         &nbsp;&nbsp;
                                         &nbsp;&nbsp;&nbsp;&nbsp;
-                                        <i id="dislike" class="fa fa-thumbs-down">7</i>
+                                        <i id="dislike" onclick="count1()" class="fa fa-thumbs-down"><p id="dislikeCount">7</p></i>
                                     </small>
                                     <button class="btn btn-primary btn-block btn-sm ">Comment</button>
                                 </li>
@@ -71,9 +71,10 @@
                                          </i>
                                     </p>
                                     <small class="votes">
-                                        <i  id="like" class="fa fa-thumbs-up">10</i>&nbsp;&nbsp;
+                                        <i id="like" onclick="count()"  class="fa fa-thumbs-up"><p id="likeCount">10</p></i>
+                                        &nbsp;&nbsp;
                                         &nbsp;&nbsp;&nbsp;&nbsp;
-                                        <i id="dislike" class="fa fa-thumbs-down">0</i>&nbsp;&nbsp; 
+                                        <i id="dislike" onclick="count1()" class="fa fa-thumbs-down"><p id="dislikeCount">2</p></i>
                                     </small>
                                     <button class="btn btn-primary btn-block btn-sm ">Comment</button>
                                 </li>
@@ -101,9 +102,10 @@
                                         </i>
                                     </p>
                                     <small class="votes">
-                                        <i id="like" class="fa fa-thumbs-up">20</i>&nbsp;&nbsp;
+                                        <i id="like" onclick="count()"  class="fa fa-thumbs-up"><p id="likeCount">40</p></i>
+                                        &nbsp;&nbsp;
                                         &nbsp;&nbsp;&nbsp;&nbsp;
-                                        <i id="dislike" class="fa fa-thumbs-down">7</i>&nbsp;&nbsp; 
+                                        <i id="dislike" onclick="count1()" class="fa fa-thumbs-down"><p id="dislikeCount">5</p></i>
                                     </small>
                                     <button class="btn btn-primary btn-block btn-sm ">Comment</button>
                                 </li>
@@ -125,9 +127,10 @@
                                         </i>
                                     </p>
                                     <small class="votes">
-                                        <i id="like" class="fa fa-thumbs-up">38</i>&nbsp;&nbsp;
+                                        <i id="like" onclick="count()"  class="fa fa-thumbs-up"><p id="likeCount">28</p></i>
+                                        &nbsp;&nbsp;
                                         &nbsp;&nbsp;&nbsp;&nbsp;
-                                        <i id="dislike" class="fa fa-thumbs-down">7</i>&nbsp;&nbsp; 
+                                        <i id="dislike" onclick="count1()" class="fa fa-thumbs-down"><p id="dislikeCount">11</p></i>
                                     </small>
                                     <button class="btn btn-primary btn-block btn-sm ">Comment</button>
                                 </li>
@@ -146,9 +149,10 @@
                                          </i>
                                     </p>
                                     <small class="votes">
-                                        <i  id="like" class="fa fa-thumbs-up">13</i>&nbsp;&nbsp; 
+                                        <i id="like" onclick="count()"  class="fa fa-thumbs-up"><p id="likeCount">33</p></i>
+                                        &nbsp;&nbsp;
                                         &nbsp;&nbsp;&nbsp;&nbsp;
-                                        <i id="dislike" class="fa fa-thumbs-down">2</i>&nbsp;&nbsp;
+                                        <i id="dislike" onclick="count1()" class="fa fa-thumbs-down"><p id="dislikeCount">7</p></i>
                                     </small>
                                     <button class="btn btn-primary btn-block btn-sm ">Comment</button>
                                 </li>
@@ -168,9 +172,10 @@
                                          </i>
                                     </p>
                                     <small class="votes">
-                                        <i  id="like" class="fa fa-thumbs-up">31</i>&nbsp;&nbsp;
+                                        <i id="like" onclick="count()"  class="fa fa-thumbs-up"><p id="likeCount">9</p></i>
+                                        &nbsp;&nbsp;
                                         &nbsp;&nbsp;&nbsp;&nbsp;
-                                        <i id="dislike" class="fa fa-thumbs-down">4</i>&nbsp;&nbsp;
+                                        <i id="dislike" onclick="count1()" class="fa fa-thumbs-down"><p id="dislikeCount">0</p></i>
                                     </small>
                                     <button class="btn btn-primary btn-block btn-sm ">Comment</button>
                                 </li>
@@ -222,12 +227,15 @@
         
 
      
-           let press = document.getElementById('like');
-           let input1 = document.getElementById('input1');
+           let likeCount = document.querySelector('#likeCount');
+           let dislikeCount = document.querySelector('#dislikeCount');
 
-           like.addEventListener('click', ()=>{
-               input1.value = parseInt(input1.value) + 1;
-           })
+           function count(){
+               likeCount.textContent = parseInt(likeCount.textContent) +1;
+           }
+           function count1(){
+               dislikeCount.textContent = parseInt(dislikeCount.textContent) -1;
+           }
     </script>
 </body>
 </html>

@@ -93,7 +93,8 @@ def logout():
 
 @app.route('/pitch')
 def pitch():
-    return render_template('pitch.html')
+    posts = Post.query.all()
+    return render_template('pitch.html', posts=posts)
 
 
 
@@ -102,6 +103,9 @@ def post():
 
     form = PostForm()
     if form.validate_on_submit():
+        post = Post(author=form.author.data, content=form.content.data)
+        db.session.add(post)
+        db.session.commit()
         flash('Your post has been created', 'success')
     return render_template('post.html', form=form)
 
