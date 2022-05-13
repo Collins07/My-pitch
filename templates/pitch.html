@@ -13,7 +13,7 @@
 
     <div id="cont1" class="container-fluid ">
         <div id="row1" class="row ">
-            <div class="col-8">
+            <div class="col-12">
             <div id="wrapper" class="home">
                 <div class="archive">
     
@@ -22,7 +22,8 @@
                         <li id="list1"><a onclick="openSection(event, 'business')" class="tablinks" id="list" href="#business" data-toggle="tab">Business</a></li>
                         <li id="list1"><a onclick="openSection(event, 'websites')" class="tablinks"  id="list" href="#websites" data-toggle="tab">Websites</a></li>
                         <li id="list1"><a onclick="openSection(event, 'product')" class="tablinks" id="list" href="#product" data-toggle="tab">Product</a></li>
-                        
+                        <a id="link2" href="{{ url_for('post') }}">POST YOURS </a>
+                        <a id="link3" href="{{ url_for('home') }}">Log Out </a>
                     </ul>
     
                     
@@ -192,16 +193,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div id="row2" class="col-4">
-                <ul id="tablinks1" class="nav nav-tabs categories">
-                    <a id="link2" href="{{ url_for('home') }}">Log Out </a>
-                </ul>
-                <div class="section">
-                    
-                </div>
-
-                <!--  -->
             </div>
         </div>
         

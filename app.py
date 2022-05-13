@@ -97,16 +97,14 @@ def pitch():
 
 
 
-@app.route('/pitch' ,methods=['GET', 'POST'])
-
-def new():
+@app.route('/post' ,methods=['GET', 'POST'])
+def post():
 
     form = PostForm()
     if form.validate_on_submit():
         flash('Your post has been created', 'success')
-    return render_template('pitch.html', form=form)
+    return render_template('post.html', form=form)
 
-    form = form
 
 
 if __name__ == '__main__':

@@ -1,0 +1,14 @@
+.section{
+    border: 1px solid rgb(153, 150, 150);
+    width: 70%;
+    margin-left: 3%;
+    margin-top: 2%;
+    background-color: rgb(77, 119, 105);
+    border-radius: 10px;
+}
+.form-group{
+    padding: 1.5%;
+}
+legend{
+    margin-left: 40%;
+}
