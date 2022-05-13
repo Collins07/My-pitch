@@ -24,6 +24,7 @@ class LoginForm(FlaskForm):
 
     submit = SubmitField('Sign-In')
 
+
 class PostForm(FlaskForm):
     until = DateTimeField(
         "Posted on", format="%Y-%m-%dT%H:%M:%S",

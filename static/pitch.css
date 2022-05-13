@@ -3,15 +3,29 @@
     width: 70%;
     margin-left: 8%;
 }
+#cont1{
+    display: inline-flex;
+}
+#row1{
+    display: inline-flex;
+
+}
+#row2{
+    height: 100px;
+    margin-top: 1.2%;
+}
+.section{
+    border: 0.5px solid rgb(168, 167, 167);
+    height: 500px;
+    border-radius: 5px;
+}
 #link2{
-    color: rgb(3, 158, 185);
-    margin-left: 40%;
-    margin-top: 1%;
+    color: rgb(36, 40, 41);
+    margin-left: 80%;
+    margin-top: 1.5%;
     font-weight: bold;
 }
-textarea{
-    height: 150px;
-}
+
 .btn{
     margin-top: 2%;
     margin-left: 80%;
@@ -20,10 +34,16 @@ textarea{
     border: 1px solid rgb(207, 197, 197);
     margin-top: 2%;
     background-color: rgb(227, 253, 227);
+    width: 100%;
 }
 #tablinks{
     height: 50px;
     background-color: rgb(141, 71, 71);
+    color: white;
+}
+#tablinks1{
+    height: 50px;
+    background-color: rgb(29, 204, 175);
     color: white;
 }
 li{

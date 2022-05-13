@@ -1,6 +1,6 @@
 from crypt import methods
 from flask import Flask, render_template, url_for, flash, redirect
-from form import RegistrationForm, LoginForm
+from form import RegistrationForm, LoginForm, PostForm
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 from flask_bcrypt import Bcrypt,bcrypt
@@ -91,10 +91,22 @@ def logout():
     return redirect(url_for('login'))
 
 
-@app.route('/post/new')
-@login_required
-def new_post():
+@app.route('/pitch')
+def pitch():
     return render_template('pitch.html')
+
+
+
+@app.route('/pitch' ,methods=['GET', 'POST'])
+
+def new():
+
+    form = PostForm()
+    if form.validate_on_submit():
+        flash('Your post has been created', 'success')
+    return render_template('pitch.html', form=form)
+
+    form = form
 
 
 if __name__ == '__main__':
